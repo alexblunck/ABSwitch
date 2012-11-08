@@ -7,7 +7,13 @@ It is highly customizable.
 
 How To
 -
-See Example Project for default setup and how to sue custom images.
+See Example Project for default setup and how to use custom images.
+
+Screenshot
+-
+![ABSwitch Screenshot](ABSwitch-Screenshot.png)
+
+===
 
 ===
 
@@ -81,12 +87,6 @@ Properties
  */
 @property (nonatomic, assign) BOOL showShadow;
 ```
-
-===
-
-Screenshot
--
-![Alt text](ABSwitch-Screenshot.png)
 
 ===
 
