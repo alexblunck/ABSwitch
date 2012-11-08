@@ -11,7 +11,7 @@ See Example Project for default setup and how to use custom images.
 
 Screenshot
 -
-![ABSwitch Screenshot](ABSwitch-Screenshot.png)
+![ABSwitch Screenshot](https://github.com/ablfx/ABSwitch/blob/master/ABSwitch-Screenshot.png?raw=true)
 
 ===
 
