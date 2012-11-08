@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ABSwitchDelegate <NSObject>
+@optional
+-(void) abSwitch:(id)abSwitch DidChangeIndex:(NSInteger)currentIndex;
+@end
+
 @interface ABSwitch : UIView
 
 -(id) initWithBackgroundImage:(UIImage*)bgImage switchImage:(UIImage*)switchImage shadowImage:(UIImage*)shadowImage;
@@ -17,6 +22,16 @@
  Current selected Index (Either 0 or 1)
  */
 @property (nonatomic, assign) NSInteger currentIndex;
+
+/*
+ Block that is called everytime index changes
+ */
+@property (nonatomic, assign) void (^block) (NSInteger currentIndex);
+
+/*
+ Delegate as alternative to using Blocks
+ */
+@property (nonatomic, strong) id <ABSwitchDelegate> delegate;
 
 /*
  Text for both Indices

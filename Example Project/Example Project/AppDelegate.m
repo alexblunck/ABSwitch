@@ -1,14 +1,13 @@
 //
 //  AppDelegate.m
-//  test
+//  Example Project
 //
-//  Created by Alexander Blunck on 11/7/12.
+//  Created by Alexander Blunck on 11/8/12.
 //  Copyright (c) 2012 Ablfx. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
-#import "TestViewController.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
@@ -16,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    TestViewController *viewController = [TestViewController new];
+    ViewController *viewController = [ViewController new];
     self.window.rootViewController = viewController;
     
     [self.window makeKeyAndVisible];

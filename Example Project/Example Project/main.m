@@ -1,8 +1,8 @@
 //
 //  main.m
-//  test
+//  Example Project
 //
-//  Created by Alexander Blunck on 11/7/12.
+//  Created by Alexander Blunck on 11/8/12.
 //  Copyright (c) 2012 Ablfx. All rights reserved.
 //
 

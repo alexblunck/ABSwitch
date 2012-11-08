@@ -71,11 +71,11 @@
         
         //Left Title Label
         leftLabel = [UITextField new];
+        leftLabel.userInteractionEnabled = NO;
         leftLabel.backgroundColor = [UIColor clearColor];
         leftLabel.textAlignment = NSTextAlignmentCenter;
         leftLabel.contentVerticalAlignment = NSTextAlignmentCenter;
         leftLabel.textColor = [UIColor colorWithWhite:0.892 alpha:1.000];
-        //leftLabel.font = [UIFont fontWithName:@"SourceSansPro-Semibold" size:14.0f];
         leftLabel.layer.shadowColor = [[UIColor blackColor] CGColor];
         leftLabel.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
         leftLabel.layer.shadowOpacity = 1.0f;
@@ -84,12 +84,12 @@
         
         //Right Title Label
         rightLabel = [UITextField new];
+        rightLabel.userInteractionEnabled = NO;
         rightLabel.backgroundColor = [UIColor clearColor];
         rightLabel.textAlignment = NSTextAlignmentCenter;
         rightLabel.contentVerticalAlignment = NSTextAlignmentCenter;
         rightLabel.enabled = NO;
         rightLabel.textColor = [UIColor colorWithWhite:0.892 alpha:1.000];
-        //rightLabel.font = [UIFont fontWithName:@"SourceSansPro-Semibold" size:14.0f];
         rightLabel.layer.shadowColor = [[UIColor blackColor] CGColor];
         rightLabel.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
         rightLabel.layer.shadowOpacity = 1.0f;
@@ -183,6 +183,16 @@
     }];
     //Update index
     self.currentIndex = 1;
+    
+    //Execute block if set
+    if (self.block) {
+        self.block(self.currentIndex);
+    }
+    
+    //If delegate is set inform delegate of index change
+    if (self.delegate && [self.delegate respondsToSelector:@selector(abSwitch:DidChangeIndex:)]) {
+        [self.delegate abSwitch:self DidChangeIndex:self.currentIndex];
+    }
 }
 -(void) animateSwitchLeft
 {
@@ -194,6 +204,16 @@
     }];
     //Update index
     self.currentIndex = 0;
+    
+    //Execute block if set
+    if (self.block) {
+        self.block(self.currentIndex);
+    }
+    
+    //If delegate is set inform delegate of index change
+    if (self.delegate && [self.delegate respondsToSelector:@selector(abSwitch:DidChangeIndex:)]) {
+        [self.delegate abSwitch:self DidChangeIndex:self.currentIndex];
+    }
 }
 
 //Called after pan ended
@@ -218,6 +238,7 @@
     } else if (self.currentIndex == 1) {
         [self animateSwitchLeft];
     }
+    
 }
 
 #pragma mark - Setters
